@@ -1,0 +1,520 @@
+#ttt-root{
+    background: #F5F5F5;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+    height: 100%;
+    width: 1240px;
+    overflow: hidden;
+    margin: auto;
+}
+#ttt-root .play-box{
+    float: left;
+    background: #333;
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+#ttt-root .play-box-inner{
+    width:740px;
+    height: 680px;
+    margin: 100px 50px 50px;
+    position: relative;
+}
+#ttt-root .play-box-cover{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 8000;
+    background: rgba(0,0,0,0.3);
+    font-size:42px;
+}
+#ttt-root .play-box-cover .message{
+    margin-top:2em;
+    font-size: 2em;
+    text-align: center;
+    color: #FDFDFD;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+#ttt-root .play-box-cover.to-start{
+    cursor: pointer;
+}
+
+#ttt-root .clear-message{
+    position: absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height: 100%;
+    background: rgba(100, 100, 100, 0.8);
+    font-size: 20em;
+    text-align: center;
+    z-index: 10000;
+    background-image:
+        -webkit-gradient(
+            linear, 0 100%, 100% 0,
+            color-stop(.25, #E2E2E2),
+            color-stop(.25, transparent),
+            color-stop(.5, transparent),
+            color-stop(.5, #E2E2E2),
+            color-stop(.75, #E2E2E2),
+            color-stop(.75, transparent), to(transparent));
+
+    background-image:
+        -moz-linear-gradient(-45deg,
+        #E2E2E2 25%,
+        transparent 25%,
+        transparent 50%,
+        #E2E2E2 50%,
+        #E2E2E2 75%,
+        transparent 75%);
+}
+#ttt-root .clear-message-text{
+    color: #EA3;
+    display: inline-block;
+    margin-top:100px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #333;
+}
+#ttt-root .clear-message .again-button{
+    margin:150px auto;
+    font-size:24px;
+    width:200px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    color: #555;
+}
+
+/*****************************
+*       control-panel       *
+******************************/
+
+#ttt-root #control-panel{
+    width:400px;
+    height: 745px;
+    float: left;
+    position: relative;
+    height: 100%;
+    background: #FDFDFD;
+}
+#ttt-root a.button{
+    font-size: 3em;
+    display: block;
+    text-align: center;
+    padding: 1em;
+    margin: 0 30px;
+    color: #AAA;
+    border: 1px solid #DDD;
+    background-color: #F0F0F0;
+    background-image: -moz-linear-gradient(#FDFDFD, #F0F0F0);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FDFDFD), to(#F0F0F0));
+    font-style: italic;
+    cursor: pointer;
+}
+#ttt-root a.button:hover{
+    background-color: #F0F0F0;
+
+}
+#ttt-root a.button:active{
+    background-color: #FAFAFA;
+    box-shadow: 1px  1px 1px rgba(0,0,0,0.2) inset;
+    background-image:none;
+    color: #89E;
+    cursor: pointer;
+}
+#ttt-root #control-panel a.stop-button:active{
+    color: #E33;
+}
+#ttt-root #control-panel a.retry-button:active{
+    color: #EA3;
+}
+
+#ttt-root #control-panel a.button.selected{
+    background: #89E;
+    color: #F0F0F0;
+    border-color: #BDBDBD;
+}
+
+#ttt-root #control-panel header{
+    background-color:#333;
+    background-image: -moz-linear-gradient(#555555, #222222);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#222222));
+    border-bottom: 1px solid #111;
+    color: #EEEEEE;
+    font-size: 20px;
+    padding: 0.5em 30px;
+    z-index: 20;
+}
+#ttt-root #control-panel header span.initial{
+    display: inline-block;
+    font-size: 3em;
+    margin-right: -0.15em;
+}
+#ttt-root #control-panel .result-box{
+    margin: 10px 30px;
+    text-align: center;
+    color: #555;
+}
+
+#ttt-root #control-panel .result-box .count-area{
+    margin-top:45px;
+    float: left;
+    width: 30%;
+    text-align: left;
+}
+#ttt-root #control-panel .result-box .count-area-item{
+    line-height: 15px;
+    display: block;
+    width:60px;
+    color: #999;
+}
+#ttt-root #control-panel .result-box .count-area .label{
+    display: inline-block;
+    margin-left: 5px;
+    width:30px;
+    font-size:12px;
+}
+#ttt-root #control-panel .result-box .count-area .value{
+    display: inline-block;
+    width:18px;
+    text-align: right;
+    font-size:12px;
+}
+#ttt-root #control-panel .result-box .rate-area{
+    float: left;
+    width: 70%;
+}
+#ttt-root #control-panel .result-box .rate-area .value{
+    font-size: 5em;
+}
+#ttt-root #control-panel .level-select {
+    margin: 20px 30px 0;
+    display: block;
+}
+
+#ttt-root #control-panel .level-select.disabled li,
+#ttt-root #control-panel .level-select.disabled a.button{
+    cursor: default;
+    background-image:none;
+    color:#CCC;
+    background: #F2F2F2;
+}
+#ttt-root #control-panel .level-select.disabled a.button:active{
+    background-image: none;
+    box-shadow:none;
+    color:#CCC;
+    background: #F2F2F2;
+}
+#ttt-root #control-panel .level-select.disabled a.button.selected{
+    background: #89E;
+    color: #F0F0F0;
+    border-color: #BDBDBD;
+}
+
+#ttt-root #control-panel .level-select li{
+    list-style: none;
+    display: inline-block;
+    margin-left: -1%;
+    width: 34%;
+    text-align: center;
+    cursor: pointer;
+}
+#ttt-root #control-panel .level-select li a{
+    padding: 0.5em 1em;
+    font-size: 1em;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+}
+#ttt-root #control-panel .level-select li:hover{
+    cursor: pointer;
+    background: #DDD;
+}
+#ttt-root #control-panel .level-select li:active{
+
+}
+
+#ttt-root #control-panel footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background: #555;
+}
+
+#ttt-root #control-panel footer span.me{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+}
+#ttt-root #control-panel footer span,
+#ttt-root #control-panel footer a{
+    color: #AAA;
+}
+
+/*****************************
+*         word-panel         *
+******************************/
+#ttt-root .word-panel{
+    color: #EEE;
+    font-size:2em;
+    text-align: center;
+    padding: 0.5em 0;
+    position: absolute;
+    bottom:140px;
+    left: -20px;
+    width:100%;
+    z-index: 100;
+}
+#ttt-root .word-panel .remain-count{
+    position: absolute;
+    width:200px;
+    height: 20px;
+    color: #888;
+    font-size:12px;
+    right: 60px;
+    bottom:-20px;
+    text-align: right;
+}
+#ttt-root .word-panel span.square{
+    width:0.5em;
+    display: inline-block;
+    height: 0.5em;
+    margin: 0.25em;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    background: #EEE;
+}
+#ttt-root .word-panel span.hit{
+    color: #888;
+}
+#ttt-root .word-panel span.active{
+    border-bottom: 1px solid #EA3;
+}
+#ttt-root .word-panel span.error{
+    border-bottom-color: #E33;
+}
+/*****************************
+*         line-panel         *
+******************************/
+#ttt-root .line-panel{
+    height: 100%;
+    padding:0 8% 0 8%;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.4) inset;
+    background: #FDFDFD;
+}
+#ttt-root .line-panel-inner{
+    width:100%;
+    height: 100%;
+}
+#ttt-root .line-panel .line,
+#ttt-root .line-padding{
+    width:45px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+#ttt-root .line-panel .pressed-box{
+    text-align: center;
+    position: absolute;
+    width:40%;
+    left:30%;
+    top:30%;
+    height: 40%;
+    font-size: 10em;
+    color: #B0B0B0;
+}
+#ttt-root .line-panel .pressed-box.error{
+    color: #B05050;
+}
+#ttt-root .line-panel .line-inner{
+    height: 100%;
+    position: relative;
+}
+#ttt-root .line-panel .line-padding.center{
+    width:165px;
+}
+#ttt-root .line-panel .line .line-display,
+#ttt-root .line-panel .line.active.pre-active .line-display{
+    left: 40%;
+    width:4px;
+    position: absolute;
+    height: 100%;
+    top:0;
+    background-color: #555;
+}
+#ttt-root .line-panel .line.active .line-display{
+    background: #EA3;
+
+}
+#ttt-root .line-panel .line-4,
+#ttt-root .line-panel .line-5{
+    display:none;
+}
+#ttt-root .line-panel .block,
+#ttt-root .line-panel .block.active.pre-active{
+    text-align: center;
+    width:46px;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 100;
+    font-size: 28px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #E5E5E5;
+    box-shadow: 5px 5px 2px 0 rgba(0, 0, 0, 0.4);
+}
+#ttt-root .line-panel .block.active{
+    background: none repeat scroll 0 0 #EEAA33;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+#ttt-root .line-panel .block.error{
+    background: #D00;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #FFF;
+}
+#ttt-root .line-panel .block.hit{
+    background: #FFF;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #AAA;
+}
+/*****************************
+*         hand-panel         *
+******************************/
+#ttt-root .hand-panel{
+    position: absolute;
+    width:100%;
+    height: 195px;
+    bottom:0;
+}
+
+#ttt-root .hand-panel .hand{
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 40%;
+}
+#ttt-root .hand-panel .hand-left{
+    margin-left: 10%;
+}
+#ttt-root .hand-panel .hand-right{
+    margin-right: 10%;
+}
+#ttt-root .hand-panel .wrist{
+    border-style: solid;
+    position: absolute;
+    bottom:0;
+    width:15%;
+    left: 33%;
+    border-width: 30px 20px 0;
+    border-color: rgba(255,255,255,0.2) transparent transparent;
+}
+#ttt-root .hand-panel .hand-right .wrist{
+    left: inherit;
+    right: 34%;
+}
+/**** finger ****/
+#ttt-root .hand-panel .finger-container{
+    height: 45%;
+    position: relative;
+    width:100%;
+}
+#ttt-root .hand-panel .finger{
+    background: rgba(255,255,255,0.2);
+    position: absolute;
+    width:5%;
+    bottom:0;
+}
+#ttt-root .hand-panel .finger.active{
+    background: #EA3;
+}
+#ttt-root .hand-panel .finger.active.pre-active{
+    background: rgba(255,255,255,0.2);
+}
+#ttt-root .hand-panel .finger.active.press{
+    background: #FA3;
+}
+#ttt-root .hand-panel .hand-left .finger-0{
+    left: 25%;
+    -webkit-transform:rotate(-18deg);
+    -moz-transform:rotate(-18deg);
+    bototm:-3px;
+}
+#ttt-root .hand-panel .hand-left .finger-1{
+    left: 37%;
+    -webkit-transform:rotate(-6deg);
+    -moz-transform:rotate(-6deg);
+    bottom:8px;
+}
+#ttt-root .hand-panel .hand-left .finger-2{
+    left: 50%;
+    -webkit-transform:rotate(3deg);
+    -moz-transform:rotate(3deg);
+    bottom:9px;
+}
+#ttt-root .hand-panel .hand-left .finger-3{
+    left: 63%;
+    -webkit-transform:rotate(15deg);
+    -moz-transform:rotate(15deg);
+    bottom:2px;
+}
+#ttt-root .hand-panel .hand-left .finger-4{
+    left: 72%;
+    bottom:-73%;
+    -webkit-transform:rotate(71deg);
+    -moz-transform:rotate(71deg);
+}
+
+#ttt-root .hand-panel .hand-right .finger-9{
+    right: 25%;
+    -webkit-transform:rotate(18deg);
+    -moz-transform:rotate(18deg);
+    bottom:-3px;
+}
+#ttt-root .hand-panel .hand-right .finger-8{
+    right: 37%;
+    -webkit-transform:rotate(6deg);
+    -moz-transform:rotate(6deg);
+    bottom:8px;
+}
+#ttt-root .hand-panel .hand-right .finger-7{
+    right: 50%;
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    bottom:9px;
+}
+#ttt-root .hand-panel .hand-right .finger-6{
+    right: 63%;
+    -webkit-transform:rotate(-15deg);
+    -moz-transform:rotate(-15deg);
+    bottom:2px;
+}
+#ttt-root .hand-panel .hand-right .finger-5{
+    right: 72%;
+    bottom:-73%;
+    -webkit-transform:rotate(-71deg);
+    -moz-transform:rotate(-71deg);
+}
+
+
+#ttt-root .hand-panel .hand-left .finger-0,
+#ttt-root .hand-panel .hand-right .finger-9{
+    height: 78%;
+}
+#ttt-root .hand-panel .hand-left .finger-1,
+#ttt-root .hand-panel .hand-right .finger-8{
+    height: 90%;
+}
+#ttt-root .hand-panel .hand-left .finger-2,
+#ttt-root .hand-panel .hand-right .finger-7{
+    height: 100%;
+}
+#ttt-root .hand-panel .hand-left .finger-3,
+#ttt-root .hand-panel .hand-right .finger-6{
+    height: 85%;
+}
+#ttt-root .hand-panel .hand-left .finger-4,
+#ttt-root .hand-panel .hand-right .finger-5{
+    height: 40%;
+}

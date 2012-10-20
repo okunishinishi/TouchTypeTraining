@@ -1,0 +1,73 @@
+html{
+    background: #E8E8E8;
+    background-image:
+        -webkit-gradient(
+            linear, 0 100%, 100% 0,
+            color-stop(.25, #E2E2E2),
+            color-stop(.25, transparent),
+            color-stop(.5, transparent),
+            color-stop(.5, #E2E2E2),
+            color-stop(.75, #E2E2E2),
+            color-stop(.75, transparent), to(transparent));
+
+    background-image:
+        -moz-linear-gradient(-45deg,
+            #E2E2E2 25%,
+            transparent 25%,
+            transparent 50%,
+            #E2E2E2 50%,
+            #E2E2E2 75%,
+            transparent 75%);
+    background-size: 200px 200px;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: "Verdana", "Tahoma";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+a{
+    text-decoration: none;
+}
+
+br.clear{
+    clear: both;
+}
+div, a.button{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#ad-area{
+    text-align: center;
+    margin:30px 30px 0;
+}
+fieldset{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #D0D0D0;
+}
+
+
+#no-support-message{
+    position: absolute;
+    z-index: 100000;
+    width:100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    color:#AAA;
+    font-size: 5em;
+}
