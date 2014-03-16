@@ -1,7 +1,7 @@
 TouchTypeTraining
 ==========
 
-A typing game written in javascript.
+A typing game written in JavaScript.
 
 Open the index.html with a browser and the game will begin.
 
